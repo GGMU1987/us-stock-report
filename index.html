@@ -3,157 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇺🇸 美股盘前报告 · 每日更新</title>
+<title>🇺🇸 美股盘前日报</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 50%, #0d1b2a 100%);
-    min-height: 100vh;
-    color: #e0e6f0;
-  }
-  .hero {
-    text-align: center;
-    padding: 60px 20px 40px;
-  }
-  .hero .flag { font-size: 64px; margin-bottom: 16px; }
-  .hero h1 {
-    font-size: 36px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #4fc3f7, #81c995, #ffd54f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 12px;
-  }
-  .hero p {
-    color: #8899aa;
-    font-size: 15px;
-    margin-bottom: 8px;
-  }
-  .stats-bar {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin: 24px 0;
-    flex-wrap: wrap;
-  }
-  .stat {
-    text-align: center;
-  }
-  .stat .num {
-    font-size: 28px;
-    font-weight: 700;
-    color: #4fc3f7;
-  }
-  .stat .label {
-    font-size: 12px;
-    color: #8899aa;
-    margin-top: 4px;
-  }
-  .latest-btn {
-    display: inline-block;
-    margin: 16px auto;
-    padding: 16px 48px;
-    background: linear-gradient(135deg, #1a73e8, #0d47a1);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
-    box-shadow: 0 4px 20px rgba(26,115,232,0.4);
-    transition: transform .2s, box-shadow .2s;
-  }
-  .latest-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(26,115,232,0.6);
-  }
-  .container {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-  }
-  .section-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #4fc3f7;
-    margin: 32px 0 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #1e2d40;
-  }
-  .report-list {
-    list-style: none;
-  }
-  .report-link {
-    display: flex;
-    align-items: center;
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    text-decoration: none;
-    color: #c8d8e8;
-    margin-bottom: 10px;
-    transition: background .2s, border-color .2s;
-  }
-  .report-link:hover {
-    background: rgba(79,195,247,0.1);
-    border-color: rgba(79,195,247,0.3);
-    color: #fff;
-  }
-  .date-icon { font-size: 20px; margin-right: 12px; }
-  .date-text { font-size: 15px; flex: 1; }
-  .arrow { color: #4fc3f7; font-size: 18px; margin-left: auto; }
-  .footer {
-    text-align: center;
-    color: #445566;
-    font-size: 13px;
-    margin-top: 40px;
-    padding-top: 24px;
-    border-top: 1px solid #1e2d40;
-  }
-  .update-time {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(79,195,247,0.1);
-    border: 1px solid rgba(79,195,247,0.2);
-    border-radius: 20px;
-    font-size: 13px;
-    color: #4fc3f7;
-    margin-top: 12px;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e6e6e6; min-height: 100vh; }
+  .hero { background: linear-gradient(135deg, #1a1f2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 20px 40px; text-align: center; border-bottom: 1px solid #2a2f3e; }
+  .hero h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(90deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+  .hero p { color: #8892a4; font-size: 1rem; margin-bottom: 24px; }
+  .latest-btn { display: inline-block; background: linear-gradient(90deg, #4facfe, #00f2fe); color: #000; font-weight: 700; padding: 14px 36px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; box-shadow: 0 4px 20px rgba(79,172,254,0.4); transition: transform .2s; }
+  .latest-btn:hover { transform: translateY(-2px); }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  .section-title { font-size: 1.2rem; font-weight: 700; color: #4facfe; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .archive-list { display: grid; gap: 12px; }
+  .archive-item { background: #1a1f2e; border: 1px solid #2a2f3e; border-radius: 12px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
+  .archive-item:hover { border-color: #4facfe; transform: translateX(4px); }
+  .archive-date { font-size: 1rem; font-weight: 600; color: #e6e6e6; }
+  .archive-tag { background: rgba(79,172,254,0.15); color: #4facfe; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+  .latest-tag { background: rgba(0,242,254,0.15); color: #00f2fe; }
+  .footer { text-align: center; padding: 30px; color: #4a5568; font-size: 0.85rem; border-top: 1px solid #2a2f3e; margin-top: 40px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; background: #1a1f2e; border: 1px solid #2a2f3e; border-radius: 20px; padding: 6px 14px; font-size: 0.8rem; color: #8892a4; margin: 4px; }
 </style>
 </head>
 <body>
 <div class="hero">
-  <div class="flag">🇺🇸</div>
-  <h1>美股盘前日报</h1>
-  <p>每个交易日北京时间 22:20 自动更新 · 数据来源 Stooq</p>
-  <div class="stats-bar">
-    <div class="stat"><div class="num">1</div><div class="label">历史报告</div></div>
-    <div class="stat"><div class="num">14+</div><div class="label">跟踪标的</div></div>
-    <div class="stat"><div class="num">TOP3</div><div class="label">每日推荐</div></div>
+  <h1>🇺🇸 美股盘前日报</h1>
+  <p>每个交易日 22:20（北京时间）自动更新 · 数据驱动 · AI 分析</p>
+  <a href="reports/us_premarket_20260302.html" class="latest-btn">📊 查看最新报告（2026年03月02日）</a>
+  <div style="margin-top:20px">
+    <span class="badge">📈 三大指数</span>
+    <span class="badge">🏆 TOP3推荐</span>
+    <span class="badge">📉 RSI/MACD分析</span>
+    <span class="badge">💰 支撑压力位</span>
+    <span class="badge">⚠️ 风险提示</span>
   </div>
-  <a href="reports/us_premarket_20260302.html" class="latest-btn">📊 查看今日报告 (2026-03-02)</a>
-  <div class="update-time">🕙 最后更新：2026-03-02 19:11 北京时间</div>
 </div>
-
 <div class="container">
   <div class="section-title">📚 历史报告归档</div>
-  <ul class="report-list">
-    
-        <li>
-            <a href="reports/us_premarket_20260302.html" class="report-link">
-                <span class="date-icon">📅</span>
-                <span class="date-text">2026-03-02（周一）</span>
-                <span style="background:#1a73e8;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px;margin-left:8px">最新</span>
-                <span class="arrow">→</span>
-            </a>
-        </li>
-  </ul>
-  <div class="footer">
-    <p>数据仅供参考，不构成投资建议 · 股市有风险，投资需谨慎</p>
-    <p style="margin-top:8px">Powered by GitHub Pages · Auto-updated daily</p>
+  <div class="archive-list">
+    <a href="reports/us_premarket_20260302.html" class="archive-item">
+      <div>
+        <div class="archive-date">2026年03月02日 · 周一</div>
+        <div style="color:#8892a4;font-size:0.85rem;margin-top:4px">推荐：BABA 阿里 · MSFT 微软 · TSLA 特斯拉</div>
+      </div>
+      <span class="archive-tag latest-tag">🔥 最新</span>
+    </a>
   </div>
+</div>
+<div class="footer">
+  <p>数据来源：Stooq · 东方财富 · 公开信息 | 本报告仅供参考，不构成投资建议</p>
+  <p style="margin-top:6px">© 2026 美股盘前日报 · 自动生成 | <a href="https://github.com/GGMU1987/us-stock-report" style="color:#4facfe">GitHub</a></p>
 </div>
 </body>
 </html>
