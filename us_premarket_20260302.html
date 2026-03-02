@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美股盘前报告 · 2026-03-02</title>
+<style>
+:root{--primary:#1a73e8;--success:#34a853;--warning:#fbbc04;--danger:#ea4335;--info:#4285f4;--bg:#f8f9fa;--card:#ffffff;--text:#202124;--text2:#5f6368;--border:#dadce0;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:20px;}
+.container{max-width:1200px;margin:0 auto;}
+.header{background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);color:white;padding:32px;border-radius:16px;margin-bottom:24px;box-shadow:0 4px 20px rgba(0,0,0,.2);}
+.header h1{font-size:28px;margin-bottom:6px;letter-spacing:1px;}
+.header .subtitle{opacity:.85;font-size:13px;}
+.market-bar{display:flex;gap:16px;margin-top:20px;flex-wrap:wrap;}
+.mkt-item{background:rgba(255,255,255,.12);padding:12px 20px;border-radius:12px;min-width:150px;}
+.mkt-item .mkt-name{font-size:12px;opacity:.8;margin-bottom:4px;}
+.mkt-item .mkt-price{font-size:22px;font-weight:bold;}
+.mkt-item .mkt-chg{font-size:13px;margin-top:2px;}
+.up{color:#ff6b6b;}.down{color:#51cf66;}
+.card{background:var(--card);border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.card-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid var(--border);}
+.card-header h2{font-size:18px;}
+.icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.icon-blue{background:#e8f0fe;color:var(--primary);}.icon-green{background:#e6f4ea;color:var(--success);}.icon-orange{background:#fef7e0;color:var(--warning);}.icon-red{background:#fce8e6;color:var(--danger);}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;}
+.data-table th,.data-table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);}
+.data-table th{background:var(--bg);font-weight:600;color:var(--text2);}
+.data-table tr:hover{background:#fafafa;}
+.status{display:inline-block;padding:2px 9px;border-radius:10px;font-size:12px;font-weight:500;}
+.status-success{background:#e6f4ea;color:#1e8e3e;}.status-warning{background:#fef7e0;color:#b06000;}.status-danger{background:#fce8e6;color:#c5221f;}.status-info{background:#e8f0fe;color:#1a73e8;}
+.indicator-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0;}
+.ind-item{background:var(--bg);padding:10px 12px;border-radius:8px;}
+.ind-item .il{font-size:11px;color:var(--text2);}
+.ind-item .iv{font-size:15px;font-weight:bold;margin-top:2px;}
+.section-title{font-size:14px;font-weight:600;color:var(--text2);margin:16px 0 8px;}
+.stock-section{border:2px solid var(--border);border-radius:14px;padding:22px;margin-bottom:24px;background:#fff;}
+.stock-section-header{display:flex;align-items:center;gap:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--border);}
+.stock-badge{background:linear-gradient(135deg,var(--primary),#1557b0);color:white;padding:7px 16px;border-radius:18px;font-size:15px;font-weight:bold;white-space:nowrap;}
+.stock-price-box{background:var(--bg);padding:10px 18px;border-radius:10px;text-align:right;}
+.stock-price-box .sp{font-size:26px;font-weight:bold;}
+.recommendation{background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:24px;border-radius:14px;text-align:center;margin-top:16px;}
+.recommendation .verdict{font-size:16px;font-weight:bold;margin:10px 0 14px;opacity:.95;}
+.price-targets{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;}
+.price-target{background:rgba(255,255,255,.18);padding:12px;border-radius:10px;}
+.price-target .label{font-size:11px;opacity:.8;}
+.price-target .value{font-size:20px;font-weight:bold;margin-top:3px;}
+.risk-warning{background:#fff3e0;border-left:4px solid #ff9800;padding:16px;border-radius:0 10px 10px 0;}
+.risk-warning h4{color:#e65100;margin-bottom:8px;}
+.risk-warning ul{margin-left:18px;color:#5d4037;}
+.risk-warning li{margin-bottom:5px;font-size:13px;}
+.divider{height:2px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:24px 0;}
+.footer{text-align:center;padding:20px;color:var(--text2);font-size:12px;}
+@media(max-width:768px){.header h1{font-size:20px;}.market-bar{flex-direction:column;}.price-targets{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+    <h1>🇺🇸 美股盘前报告</h1>
+    <div class="subtitle">生成时间：2026-03-02 16:38:23（北京时间）｜ 美股今日预计 22:30 开盘</div>
+    <div class="market-bar">
+        
+        <div class="mkt-item">
+            <div class="mkt-name">标普500</div>
+            <div class="mkt-price">6,878.88</div>
+            <div class="mkt-chg down">▼ -0.43% 昨收</div>
+        </div>
+        <div class="mkt-item">
+            <div class="mkt-name">纳指100</div>
+            <div class="mkt-price">24,960.04</div>
+            <div class="mkt-chg down">▼ -0.30% 昨收</div>
+        </div>
+        <div class="mkt-item">
+            <div class="mkt-name">道琼斯</div>
+            <div class="mkt-price">48,977.92</div>
+            <div class="mkt-chg down">▼ -1.05% 昨收</div>
+        </div>
+        <div class="mkt-item">
+            <div class="mkt-name">报告类型</div>
+            <div class="mkt-price" style="font-size:16px">盘前分析</div>
+            <div class="mkt-chg" style="color:#fbbc04">⚡ 自动生成</div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header"><div class="icon icon-red">📊</div><h2>全市场扫描（数据截至上一交易日收盘）</h2></div>
+    <table class="data-table">
+        <thead><tr><th>股票</th><th>昨收价</th><th>日涨跌</th><th>周涨跌</th><th>月涨跌</th><th>RSI(14)</th><th>MACD</th><th>距52W高</th><th>推荐度</th></tr></thead>
+        <tbody>
+            <tr>
+                <td><strong>标普500</strong></td>
+                <td>$6,878.88</td>
+                <td class="down">▼0.43%</td>
+                <td class="down">▼0.44%</td>
+                <td class="down">▼1.42%</td>
+                <td><span style="color:#b06000">44.9 接近超卖</span></td>
+                <td><span class="status status-success">+0.65 金叉</span></td>
+                <td class="down">-1.8%</td>
+                <td><span class="status status-info">指数</span></td>
+            </tr>
+            <tr>
+                <td><strong>纳指100</strong></td>
+                <td>$24,960.04</td>
+                <td class="down">▼0.30%</td>
+                <td class="down">▼0.21%</td>
+                <td class="down">▼4.08%</td>
+                <td><span>47.9 中性</span></td>
+                <td><span class="status status-success">+24.70 金叉</span></td>
+                <td class="down">-4.7%</td>
+                <td><span class="status status-info">指数</span></td>
+            </tr>
+            <tr>
+                <td><strong>道琼斯</strong></td>
+                <td>$48,977.92</td>
+                <td class="down">▼1.05%</td>
+                <td class="down">▼1.31%</td>
+                <td class="down">▼0.08%</td>
+                <td><span style="color:#ea4335;font-weight:bold">34.0 超卖</span></td>
+                <td><span class="status status-danger">-87.86 死叉</span></td>
+                <td class="down">-3.0%</td>
+                <td><span class="status status-info">指数</span></td>
+            </tr>
+            <tr>
+                <td><strong>AAPL 苹果</strong></td>
+                <td>$264.18</td>
+                <td class="down">▼3.21%</td>
+                <td class="down">▼0.15%</td>
+                <td class="up">▲3.02%</td>
+                <td><span style="color:#b06000">38.8 接近超卖</span></td>
+                <td><span class="status status-success">+0.21 金叉</span></td>
+                <td class="down">-8.5%</td>
+                <td><span class="status status-success">⭐⭐⭐ 推荐关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>NVDA 英伟达</strong></td>
+                <td>$177.19</td>
+                <td class="down">▼4.16%</td>
+                <td class="down">▼6.65%</td>
+                <td class="down">▼7.48%</td>
+                <td><span style="color:#b06000">41.1 接近超卖</span></td>
+                <td><span class="status status-danger">-0.48 死叉</span></td>
+                <td class="down">-16.5%</td>
+                <td><span class="status status-info">⭐⭐ 可关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>MSFT 微软</strong></td>
+                <td>$392.74</td>
+                <td class="down">▼2.24%</td>
+                <td class="down">▼1.13%</td>
+                <td class="down">▼18.46%</td>
+                <td><span style="color:#b06000">44.3 接近超卖</span></td>
+                <td><span class="status status-success">+1.71 金叉</span></td>
+                <td class="down">-29.3%</td>
+                <td><span class="status status-success">⭐⭐⭐ 强烈关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>TSLA 特斯拉</strong></td>
+                <td>$402.51</td>
+                <td class="down">▼1.49%</td>
+                <td class="down">▼2.26%</td>
+                <td class="down">▼6.71%</td>
+                <td><span style="color:#b06000">44.7 接近超卖</span></td>
+                <td><span class="status status-success">+0.18 金叉</span></td>
+                <td class="down">-19.3%</td>
+                <td><span class="status status-success">⭐⭐⭐ 推荐关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>META Meta</strong></td>
+                <td>$648.18</td>
+                <td class="down">▼1.34%</td>
+                <td class="down">▼1.14%</td>
+                <td class="down">▼3.07%</td>
+                <td><span style="color:#b06000">44.3 接近超卖</span></td>
+                <td><span class="status status-danger">-1.33 死叉</span></td>
+                <td class="down">-18.6%</td>
+                <td><span class="status status-info">⭐⭐ 可关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>GOOGL 谷歌</strong></td>
+                <td>$311.76</td>
+                <td class="up">▲1.42%</td>
+                <td class="down">▼1.02%</td>
+                <td class="down">▼7.22%</td>
+                <td><span style="color:#b06000">39.7 接近超卖</span></td>
+                <td><span class="status status-danger">-0.48 死叉</span></td>
+                <td class="down">-10.7%</td>
+                <td><span class="status status-info">⭐⭐ 可关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>AMZN 亚马逊</strong></td>
+                <td>$210.00</td>
+                <td class="up">▲1.00%</td>
+                <td class="down">▼0.05%</td>
+                <td class="down">▼13.58%</td>
+                <td><span>49.6 中性</span></td>
+                <td><span class="status status-success">+0.83 金叉</span></td>
+                <td class="down">-18.8%</td>
+                <td><span class="status status-info">⭐⭐ 可关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>AMD</strong></td>
+                <td>$200.21</td>
+                <td class="down">▼1.70%</td>
+                <td class="up">▲0.03%</td>
+                <td class="down">▼20.78%</td>
+                <td><span style="color:#b06000">43.9 接近超卖</span></td>
+                <td><span class="status status-danger">-0.41 死叉</span></td>
+                <td class="down">-25.0%</td>
+                <td><span class="status status-success">⭐⭐⭐ 推荐关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>MU 美光</strong></td>
+                <td>$412.37</td>
+                <td class="down">▼0.77%</td>
+                <td class="down">▼3.69%</td>
+                <td class="down">▼5.26%</td>
+                <td><span style="color:#1e8e3e">55.9 偏强</span></td>
+                <td><span class="status status-danger">-2.97 死叉</span></td>
+                <td class="down">-9.5%</td>
+                <td><span class="status status-warning">⭐ 观望</span></td>
+            </tr>
+            <tr>
+                <td><strong>BABA 阿里</strong></td>
+                <td>$144.11</td>
+                <td class="down">▼2.66%</td>
+                <td class="down">▼6.69%</td>
+                <td class="down">▼17.96%</td>
+                <td><span style="color:#c5221f;font-weight:bold">17.3 ❗极度超卖</span></td>
+                <td><span class="status status-danger">-1.64 死叉</span></td>
+                <td class="down">-25.2%</td>
+                <td><span class="status status-success">⭐⭐⭐ 强烈关注</span></td>
+            </tr>
+            <tr>
+                <td><strong>PDD 拼多多</strong></td>
+                <td>$103.73</td>
+                <td class="down">▼1.58%</td>
+                <td class="down">▼1.15%</td>
+                <td class="up">▲0.89%</td>
+                <td><span>45.7 中性</span></td>
+                <td><span class="status status-success">+0.66 金叉</span></td>
+                <td class="down">-25.6%</td>
+                <td><span class="status status-success">⭐⭐⭐ 推荐关注</span></td>
+            </tr></tbody>
+    </table>
+</div>
+
+<div class="card">
+    <div class="card-header"><div class="icon icon-green">🏆</div><h2>今日重点推荐（TOP 3）</h2></div>
+    <div style="padding:12px;background:#e6f4ea;border-radius:8px;margin-bottom:14px;font-size:13px">
+        <strong>📋 选股逻辑：</strong>综合 RSI 超卖程度 × MACD 信号 × 距52周高点距离 × 月超跌幅度 × 年线支撑，自动评分排序。
+    </div>
+    <table class="data-table">
+        <thead><tr><th>排名</th><th>股票</th><th>推荐理由</th><th>综合评分</th></tr></thead>
+        <tbody>
+            <tr>
+                <td>🥇 第1</td>
+                <td><strong>BABA 阿里</strong></td>
+                <td>RSI=17.3极度超卖、距高-25.2%深度超跌、月跌-18.0%超跌、守住年线</td>
+                <td><span class="status status-success">8分</span></td>
+            </tr>
+            <tr>
+                <td>🥈 第2</td>
+                <td><strong>MSFT 微软</strong></td>
+                <td>RSI=44.3偏低、MACD金叉、距高-29.3%深度超跌、月跌-18.5%超跌</td>
+                <td><span class="status status-success">6分</span></td>
+            </tr>
+            <tr>
+                <td>🥉 第3</td>
+                <td><strong>TSLA 特斯拉</strong></td>
+                <td>RSI=44.7偏低、MACD金叉、距高-19.3%超跌、守住年线</td>
+                <td><span class="status status-success">5分</span></td>
+            </tr></tbody>
+    </table>
+</div>
+
+<div class="divider"></div>
+<h2 style="text-align:center;font-size:22px;margin-bottom:20px">📈 推荐股票深度分析</h2>
+
+
+<div class="stock-section">
+    <div class="stock-section-header">
+        <span class="stock-badge">🥇 推荐#1</span>
+        <div>
+            <div style="font-size:20px;font-weight:bold">BABA 阿里</div>
+            <div style="color:var(--text2);font-size:13px">数据截至：2026-02-27</div>
+        </div>
+        <div class="stock-price-box" style="margin-left:auto">
+            <div class="sp down">$144.11</div>
+            <div style="font-size:13px" class="down">▼ -2.66% 昨收</div>
+        </div>
+    </div>
+    <div class="indicator-grid">
+        <div class="ind-item"><div class="il">52周最高</div><div class="iv">$192.67</div></div>
+        <div class="ind-item"><div class="il">52周最低</div><div class="iv">$95.73</div></div>
+        <div class="ind-item"><div class="il">距高点</div><div class="iv down">-25.2%</div></div>
+        <div class="ind-item"><div class="il">月涨跌</div><div class="iv down">▼17.96%</div></div>
+        <div class="ind-item"><div class="il">RSI(14)</div><div class="iv"><span style="color:#c5221f;font-weight:bold">17.3 ❗极度超卖</span></div></div>
+        <div class="ind-item"><div class="il">MACD柱</div><div class="iv">-1.64</div></div>
+        <div class="ind-item"><div class="il">布林位置</div><div class="iv">-1.8%</div></div>
+        <div class="ind-item"><div class="il">成交量</div><div class="iv">9,761,837</div></div>
+        <div class="ind-item"><div class="il">强支撑</div><div class="iv">$95.73</div></div>
+        <div class="ind-item"><div class="il">近压力</div><div class="iv">$144.58</div></div>
+        <div class="ind-item"><div class="il">周涨跌</div><div class="iv down">▼6.69%</div></div>
+        <div class="ind-item"><div class="il">年涨跌</div><div class="iv up">▲3.62%</div></div>
+    </div>
+    <div class="section-title">均线系统</div>
+    <table class="data-table">
+        <thead><tr><th>均线</th><th>数值</th><th>偏离</th><th>信号</th></tr></thead>
+        <tbody><tr><td>MA5</td><td>$150.07</td><td>-4.0%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA10</td><td>$152.60</td><td>-5.6%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA20</td><td>$157.98</td><td>-8.8%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA60</td><td>$158.34</td><td>-9.0%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA120</td><td>$162.30</td><td>-11.2%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA250 年线</td><td>$141.26</td><td>+2.0%</td><td><span class="status status-success">↑ 多头</span></td></tr></tbody>
+    </table>
+    <div class="recommendation" style="margin-top:18px">
+        <h3>BABA 阿里 操作建议</h3>
+        <div class="verdict">推荐理由：RSI=17.3极度超卖、距高-25.2%深度超跌、月跌-18.0%超跌、守住年线</div>
+        <div class="price-targets">
+            <div class="price-target"><div class="label">💚 参考买入区</div><div class="value">$139.79~144.11</div></div>
+            <div class="price-target"><div class="label">🎯 参考目标价</div><div class="value">$155.64</div></div>
+            <div class="price-target"><div class="label">🛑 参考止损位</div><div class="value">$136.90</div></div>
+        </div>
+    </div>
+</div>
+<div class="stock-section">
+    <div class="stock-section-header">
+        <span class="stock-badge">🥈 推荐#2</span>
+        <div>
+            <div style="font-size:20px;font-weight:bold">MSFT 微软</div>
+            <div style="color:var(--text2);font-size:13px">数据截至：2026-02-27</div>
+        </div>
+        <div class="stock-price-box" style="margin-left:auto">
+            <div class="sp down">$392.74</div>
+            <div style="font-size:13px" class="down">▼ -2.24% 昨收</div>
+        </div>
+    </div>
+    <div class="indicator-grid">
+        <div class="ind-item"><div class="il">52周最高</div><div class="iv">$555.45</div></div>
+        <div class="ind-item"><div class="il">52周最低</div><div class="iv">$344.79</div></div>
+        <div class="ind-item"><div class="il">距高点</div><div class="iv down">-29.3%</div></div>
+        <div class="ind-item"><div class="il">月涨跌</div><div class="iv down">▼18.46%</div></div>
+        <div class="ind-item"><div class="il">RSI(14)</div><div class="iv"><span style="color:#b06000">44.3 接近超卖</span></div></div>
+        <div class="ind-item"><div class="il">MACD柱</div><div class="iv">+1.71</div></div>
+        <div class="ind-item"><div class="il">布林位置</div><div class="iv">26.3%</div></div>
+        <div class="ind-item"><div class="il">成交量</div><div class="iv">51,268,782</div></div>
+        <div class="ind-item"><div class="il">强支撑</div><div class="iv">$380.89</div></div>
+        <div class="ind-item"><div class="il">近压力</div><div class="iv">$393.71</div></div>
+        <div class="ind-item"><div class="il">周涨跌</div><div class="iv down">▼1.13%</div></div>
+        <div class="ind-item"><div class="il">年涨跌</div><div class="iv down">▼1.75%</div></div>
+    </div>
+    <div class="section-title">均线系统</div>
+    <table class="data-table">
+        <thead><tr><th>均线</th><th>数值</th><th>偏离</th><th>信号</th></tr></thead>
+        <tbody><tr><td>MA5</td><td>$393.71</td><td>-0.2%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA10</td><td>$396.20</td><td>-0.9%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA20</td><td>$403.45</td><td>-2.7%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA60</td><td>$451.63</td><td>-13.0%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA120</td><td>$480.54</td><td>-18.3%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA250 年线</td><td>$466.90</td><td>-15.9%</td><td><span class="status status-danger">↓ 空头</span></td></tr></tbody>
+    </table>
+    <div class="recommendation" style="margin-top:18px">
+        <h3>MSFT 微软 操作建议</h3>
+        <div class="verdict">推荐理由：RSI=44.3偏低、MACD金叉、距高-29.3%深度超跌、月跌-18.5%超跌</div>
+        <div class="price-targets">
+            <div class="price-target"><div class="label">💚 参考买入区</div><div class="value">$380.96~392.74</div></div>
+            <div class="price-target"><div class="label">🎯 参考目标价</div><div class="value">$424.16</div></div>
+            <div class="price-target"><div class="label">🛑 参考止损位</div><div class="value">$373.10</div></div>
+        </div>
+    </div>
+</div>
+<div class="stock-section">
+    <div class="stock-section-header">
+        <span class="stock-badge">🥉 推荐#3</span>
+        <div>
+            <div style="font-size:20px;font-weight:bold">TSLA 特斯拉</div>
+            <div style="color:var(--text2);font-size:13px">数据截至：2026-02-27</div>
+        </div>
+        <div class="stock-price-box" style="margin-left:auto">
+            <div class="sp down">$402.51</div>
+            <div style="font-size:13px" class="down">▼ -1.49% 昨收</div>
+        </div>
+    </div>
+    <div class="indicator-grid">
+        <div class="ind-item"><div class="il">52周最高</div><div class="iv">$498.83</div></div>
+        <div class="ind-item"><div class="il">52周最低</div><div class="iv">$214.25</div></div>
+        <div class="ind-item"><div class="il">距高点</div><div class="iv down">-19.3%</div></div>
+        <div class="ind-item"><div class="il">月涨跌</div><div class="iv down">▼6.71%</div></div>
+        <div class="ind-item"><div class="il">RSI(14)</div><div class="iv"><span style="color:#b06000">44.7 接近超卖</span></div></div>
+        <div class="ind-item"><div class="il">MACD柱</div><div class="iv">+0.18</div></div>
+        <div class="ind-item"><div class="il">布林位置</div><div class="iv">18.4%</div></div>
+        <div class="ind-item"><div class="il">成交量</div><div class="iv">56,752,370</div></div>
+        <div class="ind-item"><div class="il">强支撑</div><div class="iv">$395.89</div></div>
+        <div class="ind-item"><div class="il">近压力</div><div class="iv">$407.54</div></div>
+        <div class="ind-item"><div class="il">周涨跌</div><div class="iv down">▼2.26%</div></div>
+        <div class="ind-item"><div class="il">年涨跌</div><div class="iv up">▲38.41%</div></div>
+    </div>
+    <div class="section-title">均线系统</div>
+    <table class="data-table">
+        <thead><tr><th>均线</th><th>数值</th><th>偏离</th><th>信号</th></tr></thead>
+        <tbody><tr><td>MA5</td><td>$407.54</td><td>-1.2%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA10</td><td>$410.06</td><td>-1.8%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA20</td><td>$413.85</td><td>-2.7%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA60</td><td>$438.50</td><td>-8.2%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA120</td><td>$432.65</td><td>-7.0%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA250 年线</td><td>$364.82</td><td>+10.3%</td><td><span class="status status-success">↑ 多头</span></td></tr></tbody>
+    </table>
+    <div class="recommendation" style="margin-top:18px">
+        <h3>TSLA 特斯拉 操作建议</h3>
+        <div class="verdict">推荐理由：RSI=44.7偏低、MACD金叉、距高-19.3%超跌、守住年线</div>
+        <div class="price-targets">
+            <div class="price-target"><div class="label">💚 参考买入区</div><div class="value">$390.43~402.51</div></div>
+            <div class="price-target"><div class="label">🎯 参考目标价</div><div class="value">$434.71</div></div>
+            <div class="price-target"><div class="label">🛑 参考止损位</div><div class="value">$382.38</div></div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="risk-warning">
+        <h4>⚠️ 风险提示</h4>
+        <ul>
+            <li>本报告数据来源于 Stooq 历史数据，为上一交易日收盘数据，不包含今日实时盘前报价</li>
+            <li>技术指标仅供参考，不构成任何投资建议，股市有风险，投资需谨慎</li>
+            <li>美股受宏观政策（美联储、关税）影响较大，请结合基本面综合判断</li>
+            <li>买入价位、目标价、止损位均为技术参考，请根据个人风险承受能力调整</li>
+            <li>中概股（BABA/PDD）受中美关系影响波动较大，需特别注意政策风险</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <p>报告生成时间：2026-03-02 16:38:23 | 数据来源：Stooq 历史行情</p>
+    <p style="margin-top:10px;padding:12px;background:#fff3e0;border-radius:8px;color:#5d4037">
+        <strong>免责声明：</strong>本报告仅供学习参考，不构成任何投资建议。投资者应独立判断，自行承担风险。
+    </p>
+</div>
+
+</div>
+</body>
+</html>
